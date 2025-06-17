@@ -8,11 +8,14 @@ from utils.simplify_pyautogui_interface import cursor_moveTo, cursor_click
 keyboard = Controller()
 
 
-def daily_reward_orders():
+def daily_reward_orders(AppGUI):
 	# 获得绝区零游戏窗口句柄，激活窗口
+	AppGUI.log_message("获得绝区零游戏窗口句柄，激活窗口")
+
 	hwnd = win32gui.FindWindow(None, "绝区零")
 	win32gui.SetForegroundWindow(hwnd)  # 让游戏窗口获得焦点
 	# 等待游戏加载资源
+	AppGUI.log_message("等待游戏加载资源...")
 	time.sleep(3)
 	pyautogui.click(x=960, y=540)
 	# 确保进入游戏
@@ -61,7 +64,7 @@ def complete_coffee():
 	time.sleep(2)
 	cursor_click(coordinate, 'portal_confirm_btn')
 	print('已点击确认按钮')
-	time.sleep(5)
+	time.sleep(10)
 
 	# 靠近咖啡师
 	keyboard.press('w')
@@ -103,7 +106,7 @@ def complete_store_operation():
 	cursor_click(coordinate, 'portal_confirm_btn')
 
 	# 等待数据加载
-	time.sleep(4)
+	time.sleep(10)
 
 	# 交互
 	keyboard.press('f')
@@ -141,7 +144,10 @@ def complete_store_operation():
 	print("已确认开始经营")
 	time.sleep(2)
 	cursor_click(coordinate, 'final_operation_confirm_btn')
-	cursor_click(coordinate, 'final_operation_confirm_btn')
+	cursor_click(coordinate, 'final_operation_confirm_btn', 2)
+	print("已确认经营结束")
+	time.sleep(2)
+	cursor_click(coordinate, 'divination_result_confirm_btn')
 	print("录像店经营日常完成")
 	time.sleep(3)
 

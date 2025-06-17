@@ -15,8 +15,9 @@ coordinate = {
 	'start_store_operation': (1665, 975),
 	'start_operation_confirm_btn': (1130, 620),
 	'final_operation_confirm_btn': (975, 620),
-
+	'exit_store_operation': (50, 50),
 	'divination_result_confirm_btn': (1135, 960),
+	'exit_divination': (50, 50),
 	'portal_confirm_btn': (1130,620),
 	'item_confirm_btn': (975, 725),
 	'train_tag': (1170, 150),
